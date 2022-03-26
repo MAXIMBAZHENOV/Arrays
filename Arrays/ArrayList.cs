@@ -49,6 +49,21 @@ namespace Arrays
         public int Length => _lastItemIndex + 1;
 
         public int StorageLength => _storage.Length;
+
+        public T this[int index]
+        {
+            get
+            {
+                ValidateIndex(index);
+                return _storage[index];
+            }
+            set 
+            {
+                ValidateIndex(index);
+                _storage[index] = value;
+            }
+
+        }
         private void ValidateIndex(int index)
         {
             if (index > _lastItemIndex || index < 0)
