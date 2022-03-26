@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Arrays
 {
@@ -44,9 +45,28 @@ namespace Arrays
                 Console.WriteLine(ex.Message);
             }
         }
+        static void LibraryListArray()
+        {
+            List<int> arrayList = new List<int> { 4, 5, 6 };
+            arrayList.PrintElements();
+
+            try
+            {
+                arrayList[4] = 20;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            arrayList.Add(20);
+            arrayList.PrintElements();
+            arrayList.Insert(0, 100);
+            arrayList.PrintElements();
+        }
         static void Main(string[] args)
         {
-            ArrayTest();
+            LibraryListArray();
         }
     }
 }

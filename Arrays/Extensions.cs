@@ -55,5 +55,29 @@ namespace Arrays
             Console.Write("] - this is custom ArrayList");
             Console.WriteLine();
         }
+
+        public static void PrintElements<T>(this List<T> arrayList)
+        {
+            if(null == arrayList || arrayList.Count == 0)
+            {
+                Console.WriteLine("[]");
+                return;
+            }
+
+            Console.Write("[");
+            for (int j = 0; j < arrayList.Count; j++)
+            {
+                if(j == 0)
+                {
+                    Console.Write($"{arrayList[j]}");
+                }
+                else
+                {
+                    Console.Write($",{arrayList[j]}");
+                }
+            }
+            Console.Write("]");
+            Console.WriteLine();
+        }
     }
 }
