@@ -27,9 +27,26 @@ namespace Arrays
             customArrayList.Insert(0,100);
             customArrayList.PrintElements();
         }
+        static void ArrayTest()
+        {
+            int[] array = new int[] { 1, 2, 3 };
+
+            array.PrintElements();
+            array[1] = 10;
+            array.PrintElements();
+
+            try
+            {
+                array[3] = 10;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
         static void Main(string[] args)
         {
-            ArrayListTest();
+            ArrayTest();
         }
     }
 }
